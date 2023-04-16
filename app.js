@@ -1,6 +1,5 @@
 alert("Guessing Game.");
 alert("Guess the correct number.");
-alert("You can press 'q' to quit the game.");
 
 let max=prompt("Enter the maximum number: ");
 
@@ -14,7 +13,7 @@ while (true)
 let target=Math.floor(Math.random() * max) + 1;
 console.log(target);
 
-let guess=prompt("Enter your guess: ");
+let guess=prompt("Enter your guess:\n(Type 'q' to quit.)");
 let attempts=0;
 while (true)
 {
@@ -31,7 +30,7 @@ while (true)
         if (guess<target) alert("Guess is too small.");
         else if (guess==target)
         {
-            alert(`Correct! Your guess was ${guess} and target was ${target}.\nYou guessed the target in ${attempts} attempts.`);
+            alert(`Correct!\nYou guessed the target in ${attempts} attempts.`);
             break;
         }
         else alert("Guess is too big.");
