@@ -15,20 +15,28 @@ let target=Math.floor(Math.random() * max) + 1;
 console.log(target);
 
 let guess=prompt("Enter your guess: ");
+let attempts=0;
 while (true)
 {
-    if (guess.toLowerCase()==='q') break;
+    if (guess.toLowerCase()==='q')
+    {
+        alert("You quit the game.");
+        break;
+    }
     guess=parseInt(guess);
 
     if (guess)
     {
+        attempts++;
         if (guess<target) alert("Guess is too small.");
         else if (guess==target)
         {
-            alert(`Correct! Your guess was ${guess} and target was ${target}.`);
+            alert(`Correct! Your guess was ${guess} and target was ${target}.\nYou guessed the target in ${attempts} attempts.`);
             break;
         }
         else alert("Guess is too big.");
     }
     guess=prompt("Enter your guess again: ");
 }
+
+alert ("Thank you for playing!");
